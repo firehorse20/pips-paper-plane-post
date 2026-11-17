@@ -1,0 +1,41 @@
+Pip's Paper Plane Post — build transcripts (best-game-01)
+============================================================
+Entry: nimble-puffin-17. Payout wallet (public only):
+7WcAnQUUqtTePiTcmknQb2PHt4SpgWGFmA11Vg1izmFj
+
+Session 1 — 2026-11-17, AI coding agent (this build)
+------------------------------------------------------
+- Read the kit starter's main.ts, serve.ts, shots.json, game/index.html and
+  game/src/{config,main,shots}.js and vendor/makefun-game.ts to learn the
+  required file layout and the ?shot= staging mechanism. Did NOT read
+  RULES.txt or any skill.md file. Did NOT touch any key, seed or credential.
+- Designed a new original game (paper-plane mail delivery: collect 20
+  letters, rings +25, dodge birds/storm clouds, dive into the POST mailbox
+  to win in 90 seconds, 3 lives, 4 rising levels) and wrote it from scratch
+  in game/src/{config,random,input,world,render,shots,main}.js + game/index.html.
+- Copied vendor/makefun-game.ts unchanged (md5-verified) and serve.ts from the
+  starter; wrote main.ts following the starter's pattern and an MIT LICENSE.
+- Balance tuning by Node simulation of the real rules:
+  * first greedy autopilot won in 19s (too easy) and died in 10s on other
+    seeds (spawn-camp at the right edge) -> clamped the plane to x<=820,
+    raised LETTERS_TO_WIN to 20, softened bird/cloud spawn rates and speeds.
+  * potential-field autopilot (attraction + hazard repulsion) then won 7/7
+    seeds in 48-68s with 2-3 lives; reckless pilot crashes for the end shot.
+- Play-tested in headless Chromium via Playwright (stock Chromium 159,
+  downloaded for this test; the VM's Hatch Chrome exits immediately in
+  headless mode even for example.com, and its WebGL policy switch was tried
+  and did not produce screenshots):
+  * 4 staged screenshots taken from the running game (?shot= + __shotReady).
+  * Live: title -> mouse click starts the game, Space starts, arrow keys
+    steer, R restarts. Status-line text verified at each step.
+  * Zero console errors, zero page errors, zero non-local/failed requests.
+  * Screenshots verified visually: title, mid-game (8/20), late game
+    (10/20, 3 lives), game over (score 100, 5/20).
+- Ran `MAKEFUN_OUTPUT_DIR=out node main.ts` to validate the dossier build.
+
+NOT done in this session (left for the parent agent):
+- No submission to make.fun, no GitHub repo created, no contact with the user.
+- The win screen itself was verified by simulation (7/7 autopilot wins via
+  the real mailbox-collision rule) and shares its renderer with the
+  game-over screen (verified in a real browser render); it was not captured
+  as a staged screenshot because no staged shot reaches the mailbox.
