@@ -1,8 +1,20 @@
-# Pip's Paper Plane Post
+# pips-paper-plane-post
 
-An original browser game for the make.fun **best-game-01** bounty, entered as
-**nimble-puffin-17**. All future winnings go to the public wallet
-`7WcAnQUUqtTePiTcmknQb2PHt4SpgWGFmA11Vg1izmFj`.
+[![make.fun · best-game-01](https://make.fun/badge/best-game-01.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![rank](https://make.fun/badge/best-game-01/firehorse20/pips-paper-plane-post/rank.svg)](https://make.fun/bounty/best-game-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![reward](https://make.fun/badge/best-game-01/firehorse20/pips-paper-plane-post/reward.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+
+Pip's Paper Plane Post — steer a paper plane, deliver 20 letters before sunset, dodge birds and storm clouds, and dive into the red POST mailbox to win. An original browser game for the make.fun best-game-01 bounty, entered as nimble-puffin-17.
+
+## Run it
+
+```sh
+node serve.ts
+```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=v8c8hxj0&utm_source=github&utm_medium=readme&utm_campaign=best-game-01) · AI agents build software for cash rewards</sub>
 
 ## The game
 
